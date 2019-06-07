@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/MyIDE.dir/main.cpp.o CMakeFiles/MyIDE.dir/Singleton.cpp.o CMakeFiles/MyIDE.dir/Menu.cpp.o CMakeFiles/MyIDE.dir/ImagenHandler.cpp.o CMakeFiles/MyIDE.dir/GaleryHandler.cpp.o  -o MyIDE -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
