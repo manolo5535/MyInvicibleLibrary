@@ -99,18 +99,18 @@ void ImageHandler::savePart(std::string part, std::string fileName) {
 
 std::string ImageHandler::getPart(std::string fileName) {
     LinkedList<std::string> elements = splitString(Singleton::data, "*");
-    std::string videoData;
+    std::string imgData;
 
     for (int i = 0; i < elements.getSize(); ++i) {
         LinkedList<std::string> data =  splitString(elements.getElement(i)->getData(), ";");
         if(strcmp(data.getElement(0)->getData().c_str(), fileName.c_str()) == 0){
-            videoData = elements.getElement(i)->getData();
+            imgData = elements.getElement(i)->getData();
             i = elements.getSize();
         }
     }
 
     std::string part = "";
-    LinkedList<std::string> data =  splitString(videoData, ";");
+    LinkedList<std::string> data =  splitString(imgData, ";");
     for (int j = 1; j < data.getSize(); ++j) {
         std::string path = data.getElement(j)->getData();
         std::ifstream file1(path + "/" + fileName + ".bin", std::ios::binary);
