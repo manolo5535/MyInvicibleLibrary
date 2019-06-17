@@ -3,7 +3,7 @@ project(MyIDE)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp   Singleton.cpp Menu.cpp Menu.h DataStructures/LinkedList.h DataStructures/Node.h  Singleton.h ImagenHandler.cpp ImagenHandler.h GaleryHandler.cpp GaleryHandler.h)
+set(SOURCE_FILES main.cpp   Singleton.cpp Menu.cpp Menu.h DataStructures/LinkedList.h DataStructures/Node.h  Singleton.h ImagenHandler.cpp ImagenHandler.h GaleryHandler.cpp GaleryHandler.h MetaDataHandler.cpp MetaDataHandler.h)
 add_executable(MyIDE ${SOURCE_FILES})
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmakeModules")

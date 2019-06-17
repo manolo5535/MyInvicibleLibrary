@@ -11,6 +11,8 @@
 #include "DataStructures/LinkedList.h"
 #include "Singleton.h"
 #include "ImagenHandler.h"
+#include "GaleryHandler.h"
+#include "MetaDataHandler.h"
 #define NumberOfItems 11
 
 
@@ -22,22 +24,60 @@ public:
     void draw(sf::RenderWindow &window);
     void MoveUp();
     void MoveDown();
+
     void itemsMenu();
     void itemsMenuSave();
     void itemsSearchImagen();
+
     void itemsSelect();
+    void itemsSelectFrom();
+    void itemsSelectWhere();
+    void sendMetaDataSelect();
+
+    void crearCarpetaPrincipal();
+    void crearCarpeta();
+
     void itemsDelete();
+    void itemsDeleteWhere();
+    void sendMetaDataDelete();
+
     void itemsInsert();
+    void itemsInsertValue();
+    void sendMetaDataInsert();
+
     void itemsUpdate();
+    void itemsUpdateSet();
+    void itemsUpdateWhere();
+    void sendMetaDataUpdate();
+
     void itemsSave();
     void itemsSaveGalery();
     void menuMetadata();
     void setDisplay(std::string string);
+    void setDisplay1(std::string inputText);
+    void setDisplay2(std::string inputText);
+    void setDisplay3(std::string inputText);
+    void setDisplay4(std::string inputText);
+    void setDisplay5(std::string inputText);
+
     std::string display = "";
+    std::string display1 = "";
+    std::string display2 = "";
+    std::string display3 = "";
+    std::string display4 = "";
+    std::string display5 = "";
     int GetPressdItem() {return  selectedItemIndex;}
     void search();
-    void saveImagen();
+
+    int saveImagen();
+    void imagenName();
+    void imagenYear();
+    void imagenAuthor();
+    void imagenSize();
+    void imagenDescription();
     void saveGalery();
+    void sendMetaDataImage();
+
     static void run();
 
 private:

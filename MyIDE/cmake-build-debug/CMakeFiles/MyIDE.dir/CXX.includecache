@@ -14,6 +14,24 @@ Node.h
 
 /home/jonathan/CLionProjects/MyIDE/DataStructures/Node.h
 
+/home/jonathan/CLionProjects/MyIDE/GaleryHandler.h
+iostream
+-
+stdio.h
+-
+sys/stat.h
+-
+SFML/Network/Packet.hpp
+-
+SFML/Network/Socket.hpp
+-
+fstream
+-
+dirent.h
+-
+Singleton.h
+/home/jonathan/CLionProjects/MyIDE/Singleton.h
+
 /home/jonathan/CLionProjects/MyIDE/ImagenHandler.h
 iostream
 -
@@ -47,6 +65,28 @@ Singleton.h
 /home/jonathan/CLionProjects/MyIDE/Singleton.h
 ImagenHandler.h
 /home/jonathan/CLionProjects/MyIDE/ImagenHandler.h
+GaleryHandler.h
+/home/jonathan/CLionProjects/MyIDE/GaleryHandler.h
+MetaDataHandler.h
+/home/jonathan/CLionProjects/MyIDE/MetaDataHandler.h
+
+/home/jonathan/CLionProjects/MyIDE/MetaDataHandler.h
+iostream
+-
+stdio.h
+-
+sys/stat.h
+-
+SFML/Network/Packet.hpp
+-
+SFML/Network/Socket.hpp
+-
+fstream
+-
+dirent.h
+-
+Singleton.h
+/home/jonathan/CLionProjects/MyIDE/Singleton.h
 
 /home/jonathan/CLionProjects/MyIDE/Singleton.h
 iostream

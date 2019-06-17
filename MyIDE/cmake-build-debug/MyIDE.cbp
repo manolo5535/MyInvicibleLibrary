@@ -108,6 +108,12 @@
 		<Unit filename="/home/jonathan/CLionProjects/MyIDE/Menu.h">
 			<Option target="MyIDE"/>
 		</Unit>
+		<Unit filename="/home/jonathan/CLionProjects/MyIDE/MetaDataHandler.cpp">
+			<Option target="MyIDE"/>
+		</Unit>
+		<Unit filename="/home/jonathan/CLionProjects/MyIDE/MetaDataHandler.h">
+			<Option target="MyIDE"/>
+		</Unit>
 		<Unit filename="/home/jonathan/CLionProjects/MyIDE/Singleton.cpp">
 			<Option target="MyIDE"/>
 		</Unit>

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jonathan/CLionProjects/MyIDE/GaleryHandler.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/GaleryHandler.cpp.o"
   "/home/jonathan/CLionProjects/MyIDE/ImagenHandler.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/ImagenHandler.cpp.o"
   "/home/jonathan/CLionProjects/MyIDE/Menu.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/Menu.cpp.o"
+  "/home/jonathan/CLionProjects/MyIDE/MetaDataHandler.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/MetaDataHandler.cpp.o"
   "/home/jonathan/CLionProjects/MyIDE/Singleton.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/Singleton.cpp.o"
   "/home/jonathan/CLionProjects/MyIDE/main.cpp" "/home/jonathan/CLionProjects/MyIDE/cmake-build-debug/CMakeFiles/MyIDE.dir/main.cpp.o"
   )

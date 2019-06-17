@@ -16,7 +16,7 @@ int ImagenHandler::sendImagen(std::string pathFile) {
         return -1;
 
     } else {
-        //Se obtiene el nombre del video del path ingresado
+        //Se obtiene el nombre de la imagen del path ingresado
         LinkedList<std::string> list = Singleton::splitString(pathFile, "/");
         std::string imagenName = list.getElement(list.getSize() -1)->getData();
 
@@ -40,8 +40,8 @@ int ImagenHandler::sendImagen(std::string pathFile) {
     }
 }
 
-/// Metodo para obtener un video del servidor
-/// \param fileName Nombre del video que se quiere obtener
+/// Metodo para obtener una imagen del servidor
+/// \param fileName Nombre del imagen que se quiere obtener
 std::string ImagenHandler::getImagen(std::string fileName){
     //Se envia al servidor la accion que se quiere realizar
     sf::Packet packet;
