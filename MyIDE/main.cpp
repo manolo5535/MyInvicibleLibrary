@@ -3,6 +3,7 @@
 #include "Singleton.h"
 #include "Menu.h"
 #include "ImagenHandler.h"
+#include "GaleryHandler.h"
 int main()
 {
 

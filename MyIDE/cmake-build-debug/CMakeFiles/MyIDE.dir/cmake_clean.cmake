@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyIDE.dir/Menu.cpp.o"
   "CMakeFiles/MyIDE.dir/ImagenHandler.cpp.o"
   "CMakeFiles/MyIDE.dir/GaleryHandler.cpp.o"
+  "CMakeFiles/MyIDE.dir/MetaDataHandler.cpp.o"
   "MyIDE.pdb"
   "MyIDE"
 )

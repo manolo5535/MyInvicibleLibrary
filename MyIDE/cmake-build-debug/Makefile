@@ -204,6 +204,33 @@ Menu.cpp.s:
 	$(MAKE) -f CMakeFiles/MyIDE.dir/build.make CMakeFiles/MyIDE.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
+MetaDataHandler.o: MetaDataHandler.cpp.o
+
+.PHONY : MetaDataHandler.o
+
+# target to build an object file
+MetaDataHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/MyIDE.dir/build.make CMakeFiles/MyIDE.dir/MetaDataHandler.cpp.o
+.PHONY : MetaDataHandler.cpp.o
+
+MetaDataHandler.i: MetaDataHandler.cpp.i
+
+.PHONY : MetaDataHandler.i
+
+# target to preprocess a source file
+MetaDataHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/MyIDE.dir/build.make CMakeFiles/MyIDE.dir/MetaDataHandler.cpp.i
+.PHONY : MetaDataHandler.cpp.i
+
+MetaDataHandler.s: MetaDataHandler.cpp.s
+
+.PHONY : MetaDataHandler.s
+
+# target to generate assembly for a file
+MetaDataHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/MyIDE.dir/build.make CMakeFiles/MyIDE.dir/MetaDataHandler.cpp.s
+.PHONY : MetaDataHandler.cpp.s
+
 Singleton.o: Singleton.cpp.o
 
 .PHONY : Singleton.o
@@ -276,6 +303,9 @@ help:
 	@echo "... Menu.o"
 	@echo "... Menu.i"
 	@echo "... Menu.s"
+	@echo "... MetaDataHandler.o"
+	@echo "... MetaDataHandler.i"
+	@echo "... MetaDataHandler.s"
 	@echo "... Singleton.o"
 	@echo "... Singleton.i"
 	@echo "... Singleton.s"
