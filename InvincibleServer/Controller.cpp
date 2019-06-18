@@ -1,8 +1,8 @@
 #include "Controller.h"
 
 void Controller::sendParts(std::vector<byte> data, std::string filename) {
-    //Se obtienen las partes del video y la paridad
-    LinkedList<std::vector<byte>> parts = VideoHandler::splitVideo(data);
+    //Se obtienen las partes de la imagen y la paridad
+    LinkedList<std::vector<byte>> parts = ImageHandler::splitImage(data);
     std::vector<byte> parity = FaultTolerance::calculateParity(parts.getElement(0)->getData(), parts.getElement(1)->getData(), parts.getElement(2)->getData());
 
     //Se obtiene el nombre y la extension del fichero
@@ -59,10 +59,10 @@ int Controller::getParityDisk() {
     return disc;
 }
 
-std::string Controller::getVideo(std::string name) {
-    LinkedList<std::string> data = DataBase::getVideoData(name);
+std::string Controller::getImage(std::string name) {
+    LinkedList<std::string> data = DataBase::getImageData(name);
 
-    //Se verifica que se obtuvo el video de manera correcta
+    //Se verifica que se obtuvo la imagen de manera correcta
     if(data.getSize() > 0){
         std::string part1 = "";
         std::string part2 = "";
@@ -71,12 +71,12 @@ std::string Controller::getVideo(std::string name) {
 
         int currentPart = 0;
 
-        //Se solicitan las partes del video a cada uno de los discos
+        //Se solicitan las partes de la imagen a cada uno de los discos
         for (int i = 1; i < 5; ++i) {
             //Se obtiene el disco en el que se encuentra la parte actual
             int diskNum = std::stoi(data.getElement(2+i)->getData());
 
-            //Se obtiene la parte actual del video
+            //Se obtiene la parte actual de la imagen
             if(i == 1){
                 part1 = getPart(name + std::to_string(currentPart + 1), diskNum);
             } else if(i == 2){
@@ -98,10 +98,10 @@ std::string Controller::getVideo(std::string name) {
             part3 = FaultTolerance::recoverData(part1, part2, parity);
         }
 
-        //Se reconstruye el video
-        std::string video = VideoHandler::joinVideo(part1, part2, part3);
+        //Se reconstruye la imagen
+        std::string imagen = ImageHandler::joinImage(part1, part2, part3);
 
-        return video;
+        return imagen;
     }
 
 }
@@ -110,7 +110,7 @@ std::string Controller::getPart(std::string name, int diskNum) {
     //Se obtiene el disco solicitado
     sf::TcpSocket* disk = Singleton::getDisks()->getElement(diskNum)->getData();
 
-    //Se le indica al disco que se esta solicitando una parte de un video
+    //Se le indica al disco que se esta solicitando una parte de una imagen
     sf::Packet packet;
     packet << "getPart";
     packet << name;
@@ -173,7 +173,7 @@ void Controller::restoreDisk(int diskNum) {
     dataPacket << dataBase;
     disk->send(dataPacket);
 
-    //Se reconstruye la parte perdida del video y se le envia al disco
+    //Se reconstruye la parte perdida de la imagen
     LinkedList<std::string> elements = DataBase::splitString(DataBase::getTable(), "/");
 
     for (int j = 1; j < elements.getSize(); ++j) {
@@ -191,12 +191,12 @@ void Controller::restoreDisk(int diskNum) {
 
             int currentPart = 0;
 
-            //Se solicitan las partes del video a cada uno de los discos
+            //Se solicitan las partes de la imagen a cada uno de los discos
             for (int k = 1; k < 5; ++k) {
                 //Se obtiene el disco en el que se encuentra la parte actual
                 int numDisk = std::stoi(data.getElement(2 + k)->getData());
                 if(diskNum != numDisk) {
-                    //Se obtiene la parte actual del video
+                    //Se obtiene la parte actual de la imagen
                     if (k == 1) {
                         part1 = getPart(name + std::to_string(currentPart + 1), numDisk);
                     } else if (k == 2) {

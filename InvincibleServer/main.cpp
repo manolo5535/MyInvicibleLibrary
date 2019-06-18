@@ -1,7 +1,6 @@
 #include <SFML/Network.hpp>
 #include <iostream>
 #include "ImageHandler.h"
-#include "VideoHandler.h"
 
 #define PORT 2001
 
@@ -54,24 +53,24 @@ int main(int argc, char const *argv[]) {
                             std::string stringAction;
                             receivePacket >> stringAction;
                             char* action = (char*) stringAction.c_str();
-                            cout << action << endl;
+
                             //Se realiza una solicitud de almacenaje
                             if(strcmp(action, "saveImagen") == 0){
                                 cout << "solicitud de almacenaje " << endl;
                                 std::string fileName;
                                 receivePacket >> fileName;
-                                std::vector<byte> video = VideoHandler::receiveVideo(clients->getElement(i)->getData());
-                                controller.sendParts(video, fileName);
+                                std::vector<byte> imagen = ImageHandler::receiveImage(clients->getElement(i)->getData());
+                                controller.sendParts(imagen, fileName);
 
-                                //Se realiza una solicitud de obtencion de un video
+                                //Se realiza una solicitud de obtencion de una imagen
                             } else if(strcmp(action, "getImagen") == 0){
-                                cout << "solicitud de obtencion de un video " << endl;
+                                cout << "solicitud de obtencion de una imagen" << endl;
                                 std::string fileName;
                                 receivePacket >> fileName;
-                                std::string video = controller.getVideo(fileName);
+                                std::string imagen = controller.getImage(fileName);
                                 sf::Packet responsePacket;
-                                responsePacket << video;
-                                responsePacket << DataBase::getVideoData(fileName).getElement(1)->getData();
+                                responsePacket << imagen;
+                                responsePacket << DataBase::getImageData(fileName).getElement(1)->getData();
                                 clients->getElement(i)->getData()->send(responsePacket);
 
                                 //Se realiza una solicitud de obtencion de la tabla de la base de datos

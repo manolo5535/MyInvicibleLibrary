@@ -114,16 +114,16 @@ LinkedList<std::string> DataBase::splitString(std::string string, char *splitCha
     return list;
 }
 
-LinkedList<std::string> DataBase::getVideoData(std::string name) {
-    //Se obtiene una lista con todos los videos almacenados en la tabla
+LinkedList<std::string> DataBase::getImageData(std::string name) {
+    //Se obtiene una lista con todas las imagenes almacenadas en la tabla
     LinkedList<std::string> rows = splitString(getTable(), "/");
 
-    //Se busca la informacion del video solicitado utilizando su nombre
+    //Se busca la informacion de la imagen solicitada utilizando su nombre
     for (int i = 0; i < rows.getSize(); ++i) {
         std::string row = rows.getElement(i)->getData();
         LinkedList<std::string> data = splitString(row, ";");
 
-        //Se compara el nombre del video actual con el nombre del video que se esta buscando
+        //Se compara el nombre de la imagen actual con el nombre de la imagen que se esta buscando
         if(strcmp(data.getElement(0)->getData().c_str(), name.c_str()) == 0){
             return data;
         }

@@ -19,12 +19,15 @@ private:
 
 public:
     /**
-     * @brief metodo para instanciar un objeto si este no existe, si
+     * @brief metodo para instanciar un Singleton si este no existe, si
      * existe devolver el puntero al ya vreado
      * @return Singleton*
      */
     static Singleton* getInstance();
 
+    /**
+     * Getters
+     */
     static LinkedList<sf::TcpSocket*>* getClients();
 
     static LinkedList<sf::TcpSocket*>* getDisks();
