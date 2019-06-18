@@ -4,6 +4,9 @@
 
 #include "MetaDataHandler.h"
 #include <iostream>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+
 using namespace std;
 void MetaDataHandler::sendSelectData(std::string select, std::string from, std::string where) {
 
@@ -41,12 +44,12 @@ void MetaDataHandler::sendInsertData(std::string insert, std::string values) {
     cout<<values<<endl;
 }
 
-void MetaDataHandler::sendDeleteData(std::string dele, std::string where) {
+void MetaDataHandler::sendDeleteData(std::string del, std::string where) {
     sf::Packet actionPacket;
     actionPacket << "Delete";
-    actionPacket << dele;
+    actionPacket << del;
     Singleton::getServer()->send(actionPacket);
-    cout<<dele<<endl;
+    cout<<del<<endl;
 
     sf::Packet actionPacket1;
     actionPacket1 << "DeleteWhere";
@@ -77,35 +80,18 @@ void MetaDataHandler::sendUpdateData(std::string update, std::string set, std::s
 
 }
 
-void MetaDataHandler::sendImageData(std::string name, std::string author, std::string year, std::string size,std::string description) {
+void MetaDataHandler::sendImageData(std::string name, std::string author, std::string year, std::string size,std::string description,std::string galery) {
+
+    boost::property_tree::ptree pt2;
+    pt2.put("ImageName",name);
+    pt2.put("ImageAutho",author);
+    pt2.put("ImagenYear",year;
+    pt2.put("ImageSize",size);
+    pt2.put("ImageDescription",description);
+    pt2.put("ImageGalery",galery);
+
     sf::Packet actionPacket;
-    actionPacket << "ImageName";
-    actionPacket << name;
+    actionPacket << pt2;
     Singleton::getServer()->send(actionPacket);
-
-
-    sf::Packet actionPacket1;
-    actionPacket1 << "ImageAuthor";
-    actionPacket1 << author;
-    Singleton::getServer()->send(actionPacket1);
-
-
-    sf::Packet actionPacket2;
-    actionPacket1 << "ImagenYear";
-    actionPacket2 << year;
-    Singleton::getServer()->send(actionPacket2);
-
-    sf::Packet actionPacket3;
-    actionPacket3 << "ImageSize";
-    actionPacket3 << size;
-    Singleton::getServer()->send(actionPacket3);
-
-
-    sf::Packet actionPacket4;
-    actionPacket4 << "ImageDescription";
-    actionPacket4 << description;
-    Singleton::getServer()->send(actionPacket4);
-
-
 
 }

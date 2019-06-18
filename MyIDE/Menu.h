@@ -13,10 +13,12 @@
 #include "ImagenHandler.h"
 #include "GaleryHandler.h"
 #include "MetaDataHandler.h"
+#include "Image.h"
 #define NumberOfItems 11
 
 
 class Menu {
+
 public:
     Menu(float width, float heigth);
     int typeOfWindow;
@@ -59,6 +61,7 @@ public:
     void setDisplay3(std::string inputText);
     void setDisplay4(std::string inputText);
     void setDisplay5(std::string inputText);
+    void setDisplay6(std::string inputText);
 
     std::string display = "";
     std::string display1 = "";
@@ -66,6 +69,7 @@ public:
     std::string display3 = "";
     std::string display4 = "";
     std::string display5 = "";
+    std::string display6 = "";
     int GetPressdItem() {return  selectedItemIndex;}
     void search();
 
@@ -75,6 +79,10 @@ public:
     void imagenAuthor();
     void imagenSize();
     void imagenDescription();
+    void imagenGalery();
+
+    void imagen(int i);
+
     void saveGalery();
     void sendMetaDataImage();
 
@@ -84,6 +92,7 @@ private:
     float width;
     float height;
     sf::Font font;
+
     int selectedItemIndex;
     sf::Text menu[NumberOfItems];
     LinkedList<std::string> names;

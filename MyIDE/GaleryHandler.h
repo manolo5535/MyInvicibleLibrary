@@ -16,6 +16,7 @@ class GaleryHandler {
 public:
     static  int createPrincipalGalery();
     static int createGalery(std::string pathFile);
+    static std::string getGalery(std::string imagenName);
 };
 
 

@@ -6,7 +6,7 @@
 
 int GaleryHandler::createPrincipalGalery()  {
 
-    int carpeta = mkdir("/home/jonathan/Galeria Principal",0777);
+    int carpeta = mkdir("/home/manolo/Documentos/carpeta",0777);
     if (carpeta == 0){
         return 1;
 
@@ -18,7 +18,7 @@ int GaleryHandler::createPrincipalGalery()  {
 
 int GaleryHandler::createGalery(std::string pathFile){
     // se hace un solo string de path
-    std::string path = "/home/jonathan/Galeria Principal/"+pathFile;
+    std::string path = "/home/manolo/Documentos/carpeta"+pathFile;
     // se le indica al servidor que tiene que guardar una galeria
     sf::Packet actionPacket;
     actionPacket << "saveGalery";
@@ -37,5 +37,19 @@ int GaleryHandler::createGalery(std::string pathFile){
     }
 
 
+}
+std::string GaleryHandler::getGalery(std::string imagenName) {
+    sf::Packet actionPacket;
+    actionPacket << "getGalery";
+    actionPacket << imagenName;
+    Singleton::getServer()->send(actionPacket);
+
+    sf::Packet receivePacket;
+    std::string receiveMessage;
+
+    if (Singleton::getServer()->receive(receivePacket) == sf::Socket::Done) {
+        receivePacket >> receiveMessage;
+    }
+    return receiveMessage;
 }
 

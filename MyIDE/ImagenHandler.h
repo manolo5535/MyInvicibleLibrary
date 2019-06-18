@@ -11,6 +11,7 @@
 #include <fstream>
 #include <dirent.h>
 #include "Singleton.h"
+#include "Image.h"
 
 typedef unsigned char byte;
 

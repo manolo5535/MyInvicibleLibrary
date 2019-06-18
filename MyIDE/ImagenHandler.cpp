@@ -3,7 +3,7 @@
 //
 
 #include "ImagenHandler.h"
-
+#include "GaleryHandler.h"
 /// Metodo para enviar una imagen al servidor
 /// \param pathFile Ruta de la imagen
 /// \return 0 si se realizo con exito, -1 si hubo un error
@@ -63,11 +63,16 @@ std::string ImagenHandler::getImagen(std::string fileName){
     receivePacket >> extension;
 
     std::vector<byte> vector(receiveMessage.begin(), receiveMessage.end());
+    std::vector<char > buffer(receiveMessage.begin(), receiveMessage.end());
     std::ofstream file;
-    file.open("receive." + extension, std::ios::out | std::ios::binary);
+    std:: string image = fileName+"."+extension;
+    std:: string carpeta= GaleryHandler::getGalery(fileName);
+    file.open("/home/manolo/Documentos/carpeta/"+carpeta+fileName+"." + extension, std::ios::out | std::ios::binary);
+    file.open(fileName+"." + extension, std::ios::out | std::ios::binary);
     file.write((const char*) &vector[0], vector.size());
     file.close();
 
+    Image::createImage(image, buffer);
     return receiveMessage;
 }
 

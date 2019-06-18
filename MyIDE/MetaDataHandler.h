@@ -19,7 +19,7 @@ public:
     static void sendUpdateData(std::string update,std::string set,std::string where);
     static void sendInsertData(std::string insert,std::string values);
     static void sendDeleteData(std::string dele, std::string where);
-    static void sendImageData(std::string name,std::string author,std::string year,std::string size,std::string description);
+    static void sendImageData(std::string name,std::string author,std::string year,std::string size,std::string description,std::string galery);
 };
 
 
