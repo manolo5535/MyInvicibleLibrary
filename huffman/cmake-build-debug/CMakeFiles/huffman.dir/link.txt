@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/huffman.dir/main.cpp.o CMakeFiles/huffman.dir/Huffman.cpp.o CMakeFiles/huffman.dir/MetaHandler.cpp.o CMakeFiles/huffman.dir/Singleton.cpp.o  -o huffman 

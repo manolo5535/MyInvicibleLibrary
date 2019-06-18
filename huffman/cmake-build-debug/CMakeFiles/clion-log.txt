@@ -1,0 +1,10 @@
+/home/manolo/Descargas/CLion-2019.1.3/clion-2019.1.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/manolo/CLionProjects/huffman
+-- Boost version: 1.65.1
+-- Found the following Boost libraries:
+--   system
+-- Boost_INCLUDE_DIRS: /usr/include
+-- Boost_LIBRARIES: /usr/lib/x86_64-linux-gnu/libboost_system.so
+-- Boost_VERSION: 106501
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/manolo/CLionProjects/huffman/cmake-build-debug

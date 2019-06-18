@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/manolo/CLionProjects/huffman/Huffman.h
+iostream
+-
+map
+-
+bitset
+-
+boost/property_tree/ptree.hpp
+-
+boost/property_tree/json_parser.hpp
+-
+boost/foreach.hpp
+-
+
+/home/manolo/CLionProjects/huffman/MetaHandler.cpp
+MetaHandler.h
+/home/manolo/CLionProjects/huffman/MetaHandler.h
+
+/home/manolo/CLionProjects/huffman/MetaHandler.h
+Huffman.h
+/home/manolo/CLionProjects/huffman/Huffman.h
+iostream
+-
+fstream
+-
+string
+-
+
